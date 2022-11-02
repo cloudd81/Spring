@@ -1,0 +1,103 @@
+package kr.co.itwill.test01;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class CalcController {
+
+	public CalcController() {
+		System.out.println("------CalcController() 객체 생성됨");
+	} // end
+	
+	// URL에서 요청한 명령어 등록
+	// @RequestMapping(value="", method= GET | POST)
+	
+	// 결과 확인 http://localhost:9095/add.do?no1=3&no2=5
+	// /add.do 명령어를 get 방식으로 요청하면
+	@RequestMapping(value="/add.do", method = RequestMethod.GET)
+	public ModelAndView add(HttpServletRequest req) {
+		// 사용자가 요청한 값이 있다면 값을 가져오기
+		int no1 = Integer.parseInt(req.getParameter("no1"));
+		int no2 = Integer.parseInt(req.getParameter("no2"));
+		int result = no1 + no2;
+		
+		// view 페이지로 이동하기 위한 클래스
+		// -> Model
+		// -> ModelAndView
+		ModelAndView mav = new ModelAndView();
+		
+		// application.properties 환경설정의 prefix와 suffix 참조
+		// /WEB-INF/views/calcResult.jsp 뷰 페이지로 이동
+		mav.setViewName("calcResult");
+		
+		// 공유장소 requset 영역에 값 올리기
+		req.setAttribute("no1", no1);
+		req.setAttribute("no2", no2);
+		req.setAttribute("result", result);
+		req.setAttribute("message", "<h3>두 수 사이의 합</h3>");
+		req.setAttribute("img", "<img src='images/001.png'>");
+		
+		return mav;
+		
+	} // end
+	
+	@RequestMapping(value="/min.do", method = RequestMethod.GET)
+	public ModelAndView min(HttpServletRequest req) {
+		// 사용자가 요청한 값이 있다면 값을 가져오기
+		int no1 = Integer.parseInt(req.getParameter("no1"));
+		int no2 = Integer.parseInt(req.getParameter("no2"));
+		int result = no1 - no2;
+		
+		// view 페이지로 이동하기 위한 클래스
+		// -> Model
+		// -> ModelAndView
+		ModelAndView mav = new ModelAndView();
+		
+		// application.properties 환경설정의 prefix와 suffix 참조
+		// /WEB-INF/views/calcResult.jsp 뷰 페이지로 이동
+		mav.setViewName("calcResult");
+		
+		// 공유장소 requset 영역에 값 올리기
+		req.setAttribute("no1", no1);
+		req.setAttribute("no2", no2);
+		req.setAttribute("result", result);
+		req.setAttribute("message", "<h3>두 수 사이의 차</h3>");
+		req.setAttribute("img", "<img src='images/001.png'>");
+		
+		return mav;
+		
+	} // end
+	
+	@RequestMapping(value="/mul.do", method = RequestMethod.GET)
+	public ModelAndView mul(HttpServletRequest req) {
+		// 사용자가 요청한 값이 있다면 값을 가져오기
+		int no1 = Integer.parseInt(req.getParameter("no1"));
+		int no2 = Integer.parseInt(req.getParameter("no2"));
+		int result = no1 * no2;
+		
+		// view 페이지로 이동하기 위한 클래스
+		// -> Model
+		// -> ModelAndView
+		ModelAndView mav = new ModelAndView();
+		
+		// application.properties 환경설정의 prefix와 suffix 참조
+		// /WEB-INF/views/calcResult.jsp 뷰 페이지로 이동
+		mav.setViewName("calcResult");
+		
+		// 공유장소 requset 영역에 값 올리기
+		mav.addObject("no1", no1);
+		mav.addObject("no2", no2);
+		mav.addObject("result", result);
+		mav.addObject("message", "<h3>두 수 사이의 곱</h3>");
+		mav.addObject("img", "<img src='images/001.png'>");
+		
+		return mav;
+		
+	} // end
+	
+} // class end

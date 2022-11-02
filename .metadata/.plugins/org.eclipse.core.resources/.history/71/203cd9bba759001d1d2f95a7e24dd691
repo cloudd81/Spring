@@ -1,0 +1,5 @@
+package kr.co.itwill.bbs;
+
+public class BbsDTO {
+
+}

@@ -1,0 +1,12 @@
+package kr.co.itwill.login;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class LoginCont {
+
+	public LoginCont () {
+		System.out.println("----------LoginCont() 객체 생성됨");
+	} // end
+	
+} // class end

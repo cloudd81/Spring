@@ -1,0 +1,9 @@
+# 주석
+# src/main/resources/application.properties 환경설정 파일
+
+# Spring Boot는 WAS(Tomcat) 내장되어있음(기본 port 번호 8080)
+# 톰캣 서버의 http port 번호 변경
+server.port=9095
+
+# 주의사항 JSP, Thymeleaf, Mustache는 공동으로 사용될 수 없음.
+# JSP를 뷰페이지로 사용할 경우 

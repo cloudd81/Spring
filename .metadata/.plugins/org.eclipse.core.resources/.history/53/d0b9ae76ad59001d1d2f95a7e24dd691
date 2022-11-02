@@ -1,0 +1,38 @@
+package kr.co.itwill.bbs;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class BbsCont {
+
+	public BbsCont() {
+		System.out.println("-----------BbsCont() 객체 생성됨");
+	} // end
+	
+	// 결과확인 http://localhost:9095/bbs/create.do GET 방식으로 호출
+	@RequestMapping(value = "/bbs/create.do", method = RequestMethod.GET)
+//	1)
+//	public ModelAndView bbsForm() {
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("bbs/bbsForm");
+//		return mav;
+//	} // bbsForm() end
+//	
+//	2) 1번과 동일하게 페이지 이동이 가능하다
+	public String bbsForm() {
+		return "bbs/bbsForm";
+	} // bbsForm()
+	
+	@RequestMapping(value = "/bbs/create.do", method = RequestMethod.POST)
+	public ModelAndView bbsIns() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("bbs/bbsForm");
+		return mav;
+	} // bbsForm() end
+	
+	
+	
+} // class end

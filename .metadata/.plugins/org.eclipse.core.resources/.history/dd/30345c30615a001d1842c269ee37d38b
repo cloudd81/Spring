@@ -1,0 +1,10 @@
+package kr.co.itwill.mediagroup;
+
+public class MediagroupDAO {
+
+	public MediagroupDAO() {
+	} // end
+
+	
+	
+} // class end

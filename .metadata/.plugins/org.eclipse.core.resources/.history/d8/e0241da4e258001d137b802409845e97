@@ -1,0 +1,10 @@
+package kr.co.itwill;
+
+import org.springframework.stereotype.Controller;
+
+// URL에서 요청한 명령어를 읽어서 처리해주는 클래스로 지정
+// web.xml 에 ~~~.do 와 같은 명령어를 입력하지 말고 클래스로 구현을 하는 것
+@Controller
+public class HelloController {
+
+} // class end

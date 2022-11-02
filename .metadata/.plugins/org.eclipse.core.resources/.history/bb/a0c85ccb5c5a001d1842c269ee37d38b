@@ -1,0 +1,37 @@
+package kr.co.itwill.mediagroup;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MediagroupCont {
+
+	public MediagroupCont() {
+		System.out.println("--------MediagroupCont() 객체 생성됨");
+	} // MediagroupCont() end
+	
+	// 미디어그룹 쓰기 페이지 호출
+	// http://localhost:9095/mediagroup/create.do
+	@RequestMapping(value = "mediagroup/create.do", method = RequestMethod.GET)
+	public String createForm() {
+		return "mediagroup/createForm";
+	} // createForm() end
+	
+	@RequestMapping(value = "mediagroup/create.do", method = RequestMethod.POST)
+	public ModelAndView createProc(@ModelAttribute MediagroupDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		
+		int cnt = dao.create(dto);
+		if(cnt==0) {
+			mav.setViewName("mediagroup/msgView");
+			String msg = "<p>미디어 그룹 등록 실패</p>";
+		} else {
+			
+		} // if end		
+		return mav;
+	} // createProc() end
+	
+} // class end

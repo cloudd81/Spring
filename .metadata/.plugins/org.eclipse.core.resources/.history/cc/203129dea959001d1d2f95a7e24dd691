@@ -1,0 +1,12 @@
+package kr.co.itwill.bbs;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class BbsCont {
+
+	public BbsCont() {
+		System.out.println("-----------BbsCont() 객체 생성됨");
+	} // BbsCont() end
+	
+} // class end

@@ -1,0 +1,6 @@
+# 톰캣 서버 포트
+server.port=9095
+
+# 뷰단 연결
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp

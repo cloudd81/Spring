@@ -1,0 +1,16 @@
+package kr.co.itwill.bbs;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class BbsCont {
+
+	public BbsCont() {
+		System.out.println("-----------BbsCont() 객체 생성됨");
+	} // end
+	
+	// 결과확인 http://localhost:9095/bbs/create.do
+	@RequestMapping()
+	
+} // class end

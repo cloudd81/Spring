@@ -1,0 +1,9 @@
+package kr.co.itwill.login;
+
+public class LoginDTO {
+
+	public LoginDTO () {
+		System.out.println("----------LoginDTO() 객체 생성됨");
+	} // end
+	
+} // class end

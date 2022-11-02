@@ -1,0 +1,20 @@
+package kr.co.itwill.login;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+public class LoginCont {
+
+	public LoginCont () {
+		System.out.println("----------LoginCont() 객체 생성됨");
+	} // end
+	
+	// 결과 확인 http://localhost:9095/login.do
+	@RequestMapping(value="/login.do", method = RequestMethod.GET)
+	public String LoginForm() {
+		return "login/loginForm";
+	} // LoginForm() end
+	
+} // class end

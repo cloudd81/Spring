@@ -1,0 +1,6 @@
+package kr.co.itwill;
+
+// URL에서 요청한 명령어를 읽어서 처리해주는 클래스로 지정
+public class HelloController {
+
+} // class end

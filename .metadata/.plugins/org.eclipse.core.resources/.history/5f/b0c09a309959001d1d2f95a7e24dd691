@@ -1,0 +1,19 @@
+package kr.co.itwill.test01;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ComputeController {
+
+	public ComputeController() {
+		System.out.println("------ComputeController() 객체 생성됨");
+	}
+	
+	// 결과 확인 http://localhost:9095/diff.do?no1=3&no2=5
+	@RequestMapping("/diff.do") // GET | POST
+	public ModelAndView diff() {
+		
+	} // diff() end
+	
+}

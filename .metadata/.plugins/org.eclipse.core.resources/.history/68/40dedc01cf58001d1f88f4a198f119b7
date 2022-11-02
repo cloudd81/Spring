@@ -1,0 +1,15 @@
+package kr.co.itwill;
+
+import kr.co.yermi.josamoa.Josamoa;
+
+public class JosamoaTest {
+
+	public static void main(String[] args) {
+		
+		Josamoa josamoa = new Josamoa();
+		
+		josamoa.setJosa("영철", "은는");
+
+	}
+
+}

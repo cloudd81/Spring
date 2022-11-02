@@ -1,0 +1,9 @@
+package kr.co.itwill.mediagroup;
+
+public class MediagroupDAO {
+
+	public MediagroupDAO() {
+		System.out.println("-----------MediagroupDAO() 객체 생성됨");
+	} // end	
+	
+} // class end

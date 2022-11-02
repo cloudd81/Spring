@@ -1,0 +1,13 @@
+package kr.co.itwill;
+
+public class Josamoa {
+
+	public static void main(String[] args) {
+		
+		JosamoaTest josamoa = new JosamoaTest();
+		
+		josamoa.setJosa("영철", "은는");
+
+	}
+
+}

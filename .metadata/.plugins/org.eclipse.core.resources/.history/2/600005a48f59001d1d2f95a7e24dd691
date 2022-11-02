@@ -1,0 +1,36 @@
+package kr.co.itwill.test01;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class CalcController {
+
+	public CalcController() {
+		System.out.println("------CalcController() 객체 생성됨");
+	} // end
+	
+	// URL에서 요청한 명령어 등록
+	// @RequestMapping(value="", method= GET | POST)
+	
+	// 결과 확인 http://localhost:9095/add.do?no1=3&no2=5
+	// /add.do 명령어를 get 방식으로 요청하면
+	@RequestMapping(value="/add.do", method = RequestMethod.GET)
+	public ModelAndView add(HttpServletRequest req) {
+		// 사용자가 요청한 값이 있다면 값을 가져오기
+		int no1 = Integer.parseInt(req.getParameter("no1"));
+		int no2 = Integer.parseInt(req.getParameter("no2"));
+		int result = no1 + no2;
+				
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("result", result)
+		
+		return mav;
+		
+	} // end
+	
+} // class end

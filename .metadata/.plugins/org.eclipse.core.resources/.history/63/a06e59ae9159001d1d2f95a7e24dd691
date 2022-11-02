@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>calcResult.jsp</title>
+</head>
+<body>
+	<h1>계산 결과</h1>
+	
+	<h2>JSP</h2>
+	<%=request.getAttribute("message")%>
+	숫자 1 : <%=request.getAttribute("no1")%><br>
+	숫자 2 : <%=request.getAttribute("no2")%><br>
+	결 과 : <%=request.getAttribute("result")%><br>
+	<%=request.getAttribute("img")%>
+	<hr>
+	
+	<h2>EL</h2>
+	${requestScope.message}
+	
+</body>
+</html>

@@ -1,0 +1,12 @@
+package kr.co.itwill.mediagroup;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class MediagroupDAO {
+
+	public MediagroupDAO() {
+		System.out.println("-----------MediagroupDAO() 객체 생성됨");
+	} // end
+	
+} // class end

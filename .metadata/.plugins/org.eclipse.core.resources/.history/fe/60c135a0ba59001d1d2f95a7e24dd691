@@ -1,0 +1,6 @@
+package kr.co.itwill.login;
+
+public class LoginDTO {
+
+	
+} // class end

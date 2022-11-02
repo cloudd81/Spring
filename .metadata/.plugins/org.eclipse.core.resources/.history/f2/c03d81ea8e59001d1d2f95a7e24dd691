@@ -1,0 +1,19 @@
+package kr.co.itwill.test01;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class CalcController {
+
+	public CalcController() {
+		System.out.println("------CalcController() 객체 생성됨");
+	} // end
+	
+	@RequestMapping(value="", method= GET | POST)
+	public ModelAndView calc() {
+		
+	} // end
+	
+} // class end

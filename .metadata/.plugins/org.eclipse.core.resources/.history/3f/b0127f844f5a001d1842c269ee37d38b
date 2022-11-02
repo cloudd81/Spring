@@ -1,0 +1,9 @@
+# 톰캣 서버 포트
+server.port=9095
+
+# 뷰단 연결
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+
+# JSP 페이지가 수정이 되면 자동으로 서버를 재시작하게 해줌
+server.servlet.jsp.init-parameters.development=true;

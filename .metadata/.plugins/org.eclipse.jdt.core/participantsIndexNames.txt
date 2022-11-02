@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+C:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2142053049.index
+\spring02_mvc\src\main\java
+D:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2571273382.index
+\spring03_web\src\main\java
+D:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1421262436.index
+\spring02_mvc\src\main\java
+C:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1421262436.index
+\spring02_mvc\src\main\java
+D:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2964040201.index
+\spring03_web\src\main\java
+D:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3998786122.index
+\spring03_web\src\main\java
+D:\java202207\workspace_spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3600655539.index
+\spring04_mymelon\src\main\java

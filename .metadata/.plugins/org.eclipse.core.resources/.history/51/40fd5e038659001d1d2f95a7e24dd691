@@ -1,0 +1,12 @@
+package kr.co.itwill;
+
+import org.springframework.stereotype.Controller;
+
+public class HomeController {
+
+	@Controller
+	public HomeController () {
+		System.out.println("---------HomeController() 객체 생성됨");
+	} // end
+	
+} // class end

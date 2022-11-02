@@ -1,0 +1,13 @@
+package kr.co.itwill.test01;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ComputeController {
+
+	public ComputeController() {
+		System.out.println("------ComputeController() 객체 생성됨");
+	}
+	
+	
+}
