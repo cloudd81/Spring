@@ -19,6 +19,10 @@ commit;
 
 select * from media;
 
+update media
+set poster = 'suyoungkim.jpg'
+where mediano = 1;
+
 -- 행 목록
 SELECT mediano, title, poster, filename, filesize, mview, rdate, mediagroupno
 FROM media
