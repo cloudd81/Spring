@@ -12,3 +12,7 @@ create sequence mediagroup_seq;
 commit;
 
 select * from mediagroup;
+
+
+insert into mediagroup(mediagroupno, title)
+values (mediagroup_seq.nextval, '노래노래');

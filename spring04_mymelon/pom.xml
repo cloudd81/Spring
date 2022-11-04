@@ -87,6 +87,14 @@
 			<artifactId>orai18n</artifactId>
 			<version>19.3.0.0</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- 사용자 추가 라이브러리(의존성) 끝 -->
 

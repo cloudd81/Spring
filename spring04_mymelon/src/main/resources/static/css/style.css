@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'MonoplexKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 폰트 통일 */
+* {
+	font-family: 'MonoplexKR-Regular' !important;
+	font-style: normal;
+	text-align: center;
+}
+
 /* 제목 */
 .title{
 width: 20%;

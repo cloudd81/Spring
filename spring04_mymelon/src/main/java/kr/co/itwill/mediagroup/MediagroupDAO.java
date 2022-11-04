@@ -89,10 +89,11 @@ public class MediagroupDAO {
 			sql.append(" 	FROM ( ");
 			sql.append(" 		SELECT mediagroupno, title ");
 			sql.append(" 		FROM mediagroup ");
-			sql.append(" 		ORDER BY mediagroupno DESC ");
+			sql.append(" 		ORDER BY mediagroupno ");
 			sql.append(" 	) BB ");
 			sql.append(" ) AA ");
 			sql.append(" WHERE AA.RNUM >=" + start + " AND AA.RNUM <= " + end );
+			// 시작 행번호와 끝 행번호를 start와 end 변수에 담아 sql문 실행
 			
 			RowMapper<MediagroupDTO> rowMapper = new RowMapper<MediagroupDTO>() {
 				@Override
@@ -112,5 +113,59 @@ public class MediagroupDAO {
 		
 		return list;
 	} // list2() end
+	
+	
+	public int delete(int mediagroupno) {
+		int cnt = 0;
+		try {
+			sql = new StringBuilder();
+			sql.append(" DELETE FROM mediagroup ");
+			sql.append(" WHERE mediagroupno = ? ");
+			cnt = jt.update(sql.toString(), mediagroupno);
+		} catch (Exception e) {
+			System.out.println("미디어 그룹 삭제 실패 : " + e);
+		}
+		return cnt;
+	} // delete() end
+	
+	public MediagroupDTO read(int mediagroupno) {
+		MediagroupDTO dto = null;
+		try {
+			sql = new StringBuilder();
+			sql.append(" SELECT mediagroupno, title ");
+			sql.append(" FROM mediagroup ");
+			sql.append(" WHERE mediagroupno = " + mediagroupno);
+			
+			RowMapper<MediagroupDTO> rowMapper = new RowMapper<MediagroupDTO>() {
+				@Override
+				public MediagroupDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
+					MediagroupDTO dto = new MediagroupDTO();
+					dto.setMediagroupno(rs.getInt("mediagroupno"));
+					dto.setTitle(rs.getString("title"));
+					return dto;
+				} // mapRow() end
+			}; // end
+			
+			dto = jt.queryForObject(sql.toString(), rowMapper);
+			
+		} catch (Exception e) {
+			System.out.println("상세 보기 실패 : " + e);
+		} // end
+		return dto;
+	} // read() end
+	
+	public int update(MediagroupDTO dto) {
+		int cnt = 0;
+		try {
+			sql = new StringBuilder();
+			sql.append(" UPDATE mediagroup ");
+			sql.append(" SET title = ? ");
+			sql.append(" WHERE mediagroupno = ? ");
+			cnt = jt.update(sql.toString(), dto.getTitle(), dto.getMediagroupno());
+		} catch (Exception e) {
+			System.out.println("미디어 그룹 삭제 실패 : " + e);
+		}
+		return cnt;
+	} // delete() end
 	
 } // class end
