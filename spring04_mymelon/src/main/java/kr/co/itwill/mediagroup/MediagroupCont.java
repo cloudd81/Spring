@@ -113,7 +113,7 @@ public class MediagroupCont {
 		//	- 시작 페이지를 설정해줌		-> 0*10 = 0						1*10 = 10
 		//	- 페이지의 끝을 설정해줌		-> 0+10+1 = 11					10+10+1 = 21
 		double d_page = (double)totalRowCount/pagePerBlock;
-		int Pages	  = (int)Math.ceil(d_page)-1;
+		int pages	  = (int)Math.ceil(d_page)-1;
 		int startPage = currentPage-1;				// 페이지의 시작 지점, 현재 페이지가 1일 때 0 | 2일 때 1 | 3일 때 2 이렇게 되어야 하지 않나?
 		int endPage	  = currentPage+pagePerBlock;	// 페이지의 끝 지점, 현재 페이지가 1일 때 11 | 2일 때 12 | 3일 때 13 이렇게 되어야 하지 않나?
 		
@@ -131,7 +131,7 @@ public class MediagroupCont {
 		mav.addObject("pageNum", pageNum);
 		mav.addObject("startRow", startRow);
 		mav.addObject("endRow", endRow);
-		mav.addObject("totalRowCount", totalRowCount);
+		mav.addObject("pages", pages);
 		mav.addObject("pagePerBlock", pagePerBlock);
 		mav.addObject("totalpage", totalpage);
 		mav.addObject("startPage", startPage);

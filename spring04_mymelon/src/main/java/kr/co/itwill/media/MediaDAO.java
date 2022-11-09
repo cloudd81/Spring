@@ -64,8 +64,12 @@ public class MediaDAO {
 		
 		try {
 			sql = new StringBuilder();
-			sql.append(" INSERT INTO media(mediano, title, poster, filename, filesize, mediagroupno, rdate) ");
-			sql.append(" VALUES (media_seq.nextval, ?, ?, ?, ?, ?, sysdate) ");
+//			sql.append(" INSERT INTO media(mediano, title, poster, filename, filesize, mediagroupno, rdate) ");
+//			sql.append(" VALUES (media_seq.nextval, ?, ?, ?, ?, ?, sysdate) ");
+			sql.append(" INSERT INTO media(mediano,");
+			sql.append("             title, rdate, poster, filename, filesize, mview, mediagroupno)");
+			sql.append(" VALUES((select ifnull(max(mediano),0)+1 from media as TB),");
+			sql.append("             ?, now(), ?, ?, ?, 'Y', ?)");
 			cnt = jt.update(sql.toString(), dto.getTitle(), dto.getPoster(), dto.getFilename(), dto.getFilesize(), dto.getMediagroupno());
 			
 		} catch (Exception e) {
