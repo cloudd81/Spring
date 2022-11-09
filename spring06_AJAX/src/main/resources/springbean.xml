@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- springbean.xml -->
+	<!-- 스프링 빈 등록 -->
+	
+<!-- 	<bean id="msgKO" class="kr.co.itwill.di.MessageKO1"></bean> -->
+<!-- 	<bean id="msgEN" class="kr.co.itwill.di.MessageEN1"></bean> -->
+    
+  	<bean id="msgKO" class="kr.co.itwill.di.MessageKO2"></bean>
+	<bean id="msgEN" class="kr.co.itwill.di.MessageEN2"></bean>
+    
+</beans>
