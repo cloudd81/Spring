@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- product.xml -->
+<!-- 실행할 sql문을 정의해놓은 파일(DAO클래스) -->
+<!-- 종결문자 사용금지 -->
+
+<mapper namespace="product">
+
+	<select id="list" resultType="java.util.Map">
+		SELECT product_code, product_name, description, price, filename, filesize
+		FROM product
+		ORDER BY product_code
+	</select>
+
+	<insert id="insert">
+		INSERT INTO product(product_code, product_name, description, price, filename, filesize)
+		VALUES (product_seq.nextval, #{product_name}, #{description}, #{price}, #{filename}, #{filesize})
+	</insert>
+
+</mapper>
