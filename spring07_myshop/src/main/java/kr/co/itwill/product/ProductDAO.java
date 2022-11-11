@@ -29,4 +29,23 @@ public class ProductDAO {
 		sqlSession.insert("product.insert", map);
 	} // insert() end
 	
+	public List<Map<String, Object>> search(String product_name) {
+		return sqlSession.selectList("product.search", "%" + product_name.toUpperCase() + "%");
+	} // search() end
+	
+	public Map<String, Object> detail(String product_code) {
+		return sqlSession.selectOne("product.detail", product_code);
+	} // search() end
+	
+	public void update(Map<String, Object> map) {
+		sqlSession.update("product.update", map);
+	} // insert() end
+	
+	public String filename(int product_code) {
+		return sqlSession.selectOne("product.filename", product_code);
+	} // filename() end
+	
+	public void delete(int product_code) {
+		sqlSession.delete("product.delete", product_code);
+	} // delete() end
 } // class end

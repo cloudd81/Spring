@@ -9,14 +9,63 @@
 <mapper namespace="product">
 
 	<select id="list" resultType="java.util.Map">
+		<![CDATA[
 		SELECT product_code, product_name, description, price, filename, filesize
 		FROM product
 		ORDER BY product_code
+		]]>
 	</select>
 
-	<insert id="insert">
+	<insert id="insert" parameterType="java.util.Map">
+		<![CDATA[
 		INSERT INTO product(product_code, product_name, description, price, filename, filesize)
 		VALUES (product_seq.nextval, #{product_name}, #{description}, #{price}, #{filename}, #{filesize})
+		]]>
 	</insert>
+	
+	<select id="search" resultType="java.util.Map">
+		<![CDATA[
+		SELECT product_code, product_name, description, price, filename, filesize
+		FROM product
+		WHERE upper(product_name) like #{product_name}
+		ORDER BY product_code
+		]]>	
+	</select>
+	
+	<select id="detail" resultType="java.util.Map">
+		<![CDATA[
+		SELECT product_code, product_name, description, price, filename, filesize
+		FROM product
+		WHERE product_code = #{product_code}
+		]]>
+	</select>
+	
+	<update id="update">
+		<![CDATA[
+		UPDATE product
+		SET product_name = #{product_name}
+		   ,price = #{price}
+		   ,description = #{description}
+		   ,filename = #{filename}
+		   ,filesize = #{filesize}
+		WHERE product_code = #{product_code}
+		]]>
+	</update>
+	
+	<select id="filename" resultType="String">
+		<![CDATA[
+		SELECT filename
+		FROM product
+		WHERE product_code = #{product_code}
+		]]>
+	</select>
+	
+	<delete id="delete">
+		<![CDATA[
+		DELETE FROM product
+		WHERE product_code = #{product_code}
+		]]>
+	</delete>
+	
 
 </mapper>

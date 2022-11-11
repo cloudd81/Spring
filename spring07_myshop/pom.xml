@@ -79,7 +79,6 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.oracle.ojdbc/orai18n -->
-		<!-- 대체 이거 왜 필요하냐고ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ -->
 		<dependency>
 			<groupId>com.oracle.ojdbc</groupId>
 			<artifactId>orai18n</artifactId>

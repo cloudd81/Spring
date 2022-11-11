@@ -19,3 +19,8 @@ drop table product;
 
 select * from product;
 select * from pcomment;
+
+ALTER TABLE product ADD filesize2 number;
+UPDATE product SET filesize2 = filesize;
+ALTER TABLE product DROP COLUMN filesize;
+ALTER TABLE product RENAME COLUMN filesize2 TO filesize;
