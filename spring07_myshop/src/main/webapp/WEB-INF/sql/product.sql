@@ -14,10 +14,10 @@ create table product (
 -- 상품 테이블(Maria DB)
 create table product (
 	 product_code	NUMBER          NOT NULL PRIMARY KEY
-	,product_name	VARCHAR2(100)	NOT NULL
-	,description	VARCHAR2(2000) 
+	,product_name	VARCHAR(100)	NOT NULL
+	,description	TEXT
 	,price			NUMBER          DEFAULT 0
-	,filename		VARCHAR2(500)
+	,filename		VARCHAR(500)
     ,filesize       NUMBER          DEFAULT 0
     ,regdate        DATE            NOT NULL
 );

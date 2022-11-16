@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <!-- product.xml -->
 <!-- 실행할 sql문을 정의해놓은 파일(DAO클래스) -->
 <!-- 종결문자 사용금지 -->
+<!-- INSERT INTO product(product_code, product_name, description, price, filename, filesize) -->
+<!-- VALUES (product_seq.nextval, #{product_name}, #{description}, #{price}, #{filename}, #{filesize}) -->
+
 
 <mapper namespace="product">
 
@@ -18,8 +20,8 @@
 
 	<insert id="insert" parameterType="java.util.Map">
 		<![CDATA[
-		INSERT INTO product(product_code, product_name, description, price, filename, filesize)
-		VALUES (product_seq.nextval, #{product_name}, #{description}, #{price}, #{filename}, #{filesize})
+		INSERT INTO product(product_code, product_name, description, price, filename, filesize, regdate)
+		VALUES ((select ifnull(max(product_code),0)+1 from product as TB), #{product_name}, #{description}, #{price}, #{filename}, #{filesize}, now())
 		]]>
 	</insert>
 	
